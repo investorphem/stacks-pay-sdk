@@ -2,8 +2,6 @@ name: Publish SDK
 
 on:
   push:
-    paths:
-      - "sdk/**"
     branches:
       - main
 
@@ -22,13 +20,9 @@ jobs:
           registry-url: https://registry.npmjs.org/
 
       - name: Install dependencies
-        run: |
-          cd sdk
-          npm install
+        run: npm install
 
       - name: Publish to npm
-        run: |
-          cd sdk
-          npm publish --access public
+        run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
