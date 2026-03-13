@@ -5,7 +5,7 @@
 ![npm downloads](https://img.shields.io/npm/dw/stacks-pay-sdk)
 ![license](https://img.shields.io/npm/l/stacks-pay-sdk)
 
-StackPay SDK allows merchants and developers to accept **STX payments** on the **Stacks blockchain** easily. It’s lightweight, simple, and ready fo integration in Node.js or frontend projects.
+StackPay SDK allows merchants and developers to accept **STX payments** on the **Stacks blockchain** easily. It’s lightweight, simple, and ready for integration in Node.js or frontend projects.
 
 ---
 
