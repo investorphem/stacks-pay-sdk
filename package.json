@@ -1,0 +1,17 @@
+{
+  "name": "stacks-pay-sdk",
+  "version": "1.0.5",
+  "description": "SDK for accepting STX payments",
+  "main": "index.js",
+  "keywords": [
+    "stacks",
+    "stx",
+    "payments",
+    "crypto"
+  ],
+  "author": "investorphem",
+  "license": "MIT",
+  "dependencies": {
+    "@stacks/connect": "^7.5.0"
+  }
+}
