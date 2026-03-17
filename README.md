@@ -117,5 +117,5 @@ MIT License
 
 ## Contact
 
-- GitHub: [investorphem/StackPay](https://github.com/investorphem/StackPay)  
+- GitHub: [StackPay](https://github.com/investorphem/StackPay)  
 - Project: StackPay — STX Payment SDK
