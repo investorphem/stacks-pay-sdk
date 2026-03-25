@@ -1,7 +1,7 @@
 {
   "name": "stacks-pay-sdk",
   "version": "1.1.1",
-  "description": "SDK for aceptng ST pnts",
+  "description": "SDK for acptng ST pnts",
   "main": "index.js",
   "keywords": [
     "stacks",
