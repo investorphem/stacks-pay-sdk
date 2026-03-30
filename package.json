@@ -1,7 +1,7 @@
 {
   "name": "stacks-pay-sdk",
   "version": "1.1.4",
-  "description": "Developer SDK for accepting Stacks (STX) paymentao transactions.",
+  "description": "Developer SDK for accepting Stacks (STX) paymenao transactions.",
   "main": "index.js",
   "type": "module",
   "repository": {
