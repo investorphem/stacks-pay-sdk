@@ -1,7 +1,7 @@
 {
   "name": "stacks-pay-sdk",
   "version": "1.1.4",
-  "description": "Developer SDK for accepting Stacks (SX) pay trts.",
+  "description": "Developer SDK for accepting Staks (SX) pay trts.",
   "main": "index.js",
   "type": "module",
   "repository": {
