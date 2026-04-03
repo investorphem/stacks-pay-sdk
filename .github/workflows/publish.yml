@@ -8,21 +8,30 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    # Restrict permissions so the GITHUB_TOKEN can only read code
+    permissions:
+      contents: read
+      id-token: write
 
     steps:
+      # Pinned to a specific commit SHA for security
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@60edb5dd545a775178f525247ffad35901993939
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org/
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          # Use 'npm ci' to strictly follow your (cleaned) lockfile
+          # --ignore-scripts prevents malicious postinstall code from running
+          npm ci --ignore-scripts
 
       - name: Publish to npm
-        run: npm publish --access public
+        # Only run if it's a clean build with no lifecycle scripts
+        run: npm publish --access public --ignore-scripts
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
