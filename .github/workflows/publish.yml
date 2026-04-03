@@ -24,17 +24,16 @@ jobs:
 
       - name: Install dependencies
         run: |
-          # Use 'npm install' instead of 'npm ci' since we lack a lockfile.
-          # '--ignore-scripts' is your SHIELD—it stops the malware from running.
+          # 1. Clean install without running any malicious scripts
           npm install --ignore-scripts
-
-      - name: Security Check (Optional but Recommended)
-        run: |
-          # A quick check to ensure we didn't pull the bad axios version
-          npm list axios || true
+          
+          # 2. Final safety check: This will fail the build if 1.14.1 or 0.30.4 sneaks in
+          if npm list axios | grep -E "1\.14\.1|0\.30\.4"; then
+            echo "SECURITY ALERT: Malicious axios version detected!"
+            exit 1
+          fi
 
       - name: Publish to npm
-        # We keep --ignore-scripts here to ensure nothing malicious runs during the prepublish phase
-        run: npm publish --access public --ignore-scripts
+        run: npm publish --access public --ignore-scripts --provenance
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
