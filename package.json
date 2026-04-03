@@ -1,38 +1,38 @@
 {
-  "name": "stacks-pay-sdk",
-  "version": "1.1.6",
-  "description": "Developer SDK for accepting Stacks (STX) payments and crypto transactions.",
+  "name": "stx-portfolio-sdk",
+  "version": "1.0.8",
+  "description": "Developer SDK for tracking Stacks portfolios, DeFi positions, NFTs, and wallet analytics.",
   "main": "index.js",
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/investorphem/stacks-pay-sdk.git"
+    "url": "git+https://github.com/investorphem/stx-portfolio-sdk.git"
+  },
+  "scripts": {
+    "test": "node index.js",
+    "prepublishOnly": "npm list axios | grep -qvE '1\\.14\\.1|0\\.30\\.4' || (echo 'ERROR: Compromised axios detected!' && exit 1)"
   },
   "bugs": {
-    "url": "https://github.com/investorphem/stacks-pay-sdk/issues"
+    "url": "https://github.com/investorphem/stx-portfolio-sdk/issues"
   },
-  "homepage": "https://github.com/investorphem/stacks-pay-sdk",
+  "homepage": "https://github.com/investorphem/stx-portfolio-sdk",
   "funding": {
     "type": "github",
-    "url": "https://github.com/sponsors/investorphem"
+    "url": "https://github.com/investorphem"
   },
   "keywords": [
     "stacks",
     "stx",
-    "payments",
-    "crypto",
-    "web3",
     "bitcoin defi",
-    "stacks sdk",
-    "xverse",
-    "leather"
+    "portfolio tracker",
+    "web3",
+    "nft",
+    "stacks sdk"
   ],
   "author": "Oluwafemi Olagoke",
   "license": "MIT",
   "dependencies": {
-    "@stacks/connect": "^7.10.0",
-    "@stacks/network": "^6.13.0",
-    "@stacks/transactions": "^6.13.0"
+    "axios": "1.14.2"
   },
   "publishConfig": {
     "access": "public"
