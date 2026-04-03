@@ -1,37 +1,36 @@
 {
-  "name": "stx-portfolio-sdk",
-  "version": "1.0.8",
-  "description": "Developer SDK for tracking Stacks portfolios, DeFi positions, NFTs, and wallet analytics.",
+  "name": "stacks-pay-sdk",
+  "version": "1.1.6",
+  "description": "Developer SDK for real-time decentralized payroll and streaming on the Stacks blockchain.",
   "main": "index.js",
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/investorphem/stx-portfolio-sdk.git"
-  },
-  "scripts": {
-    "test": "node index.js",
-    "prepublishOnly": "npm list axios | grep -qvE '1\\.14\\.1|0\\.30\\.4' || (echo 'ERROR: Compromised axios detected!' && exit 1)"
+    "url": "git+https://github.com/investorphem/stacks-pay-sdk.git"
   },
   "bugs": {
-    "url": "https://github.com/investorphem/stx-portfolio-sdk/issues"
+    "url": "https://github.com/investorphem/stacks-pay-sdk/issues"
   },
-  "homepage": "https://github.com/investorphem/stx-portfolio-sdk",
+  "homepage": "https://github.com/investorphem/stacks-pay-sdk",
   "funding": {
     "type": "github",
-    "url": "https://github.com/investorphem"
+    "url": "https://github.com/sponsors/investorphem"
   },
   "keywords": [
     "stacks",
     "stx",
-    "bitcoin defi",
-    "portfolio tracker",
-    "web3",
-    "nft",
-    "stacks sdk"
+    "payroll",
+    "streaming-payments",
+    "bitcoin-defi",
+    "stacks-sdk",
+    "web3"
   ],
   "author": "Oluwafemi Olagoke",
   "license": "MIT",
   "dependencies": {
+    "@stacks/connect": "7.10.1",
+    "@stacks/network": "6.14.0",
+    "@stacks/transactions": "6.14.0",
     "axios": "1.14.0"
   },
   "publishConfig": {
