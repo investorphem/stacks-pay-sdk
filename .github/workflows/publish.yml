@@ -13,7 +13,7 @@ jobs:
       id-token: write
 
     steps:
-      # Using the verified v4 tags
+      # Switched to verified v4 tags to resolve the "Unable to resolve" error
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -25,11 +25,13 @@ jobs:
 
       - name: Install dependencies
         run: |
-          # The --ignore-scripts flag is your primary defense
+          # This remains your primary security layer: 
+          # 1. 'npm ci' ensures your lockfile is strictly followed.
+          # 2. '--ignore-scripts' blocks the axios malware from running.
           npm ci --ignore-scripts
 
       - name: Publish to npm
-        # Using --provenance for the "verified" badge on npm
+        # Adding --provenance gives your SDK a "verified" checkmark on npmjs.com
         run: npm publish --access public --ignore-scripts --provenance
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
