@@ -15,7 +15,7 @@ export function createInvoice({ amount, merchantAddress, memo }) {
     : Array.from(crypto.getRandomValues(new Uint32Array(4))).map(b => b.toString(16)).join('-');
   return {
     id
-    amount: amount.toString(), // Ensure string for BigInt/Microstacks precision
+    amount: amount.toString(), // Ensure string forBigInt/Microstacks precision
     merchantAddress,
     memo: memo || "",
     status: "pending",
