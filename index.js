@@ -13,9 +13,10 @@ export function createInvoice({ amount, merchantAddress, memo }) {
   const id = (typeof crypto !== "undefined" && crypto.randomUUID)
     ? crypto.randomUUID()
     : Array.from(crypto.getRandomValues(new Uint32Array(4))).map(b => b.toString(16)).join('-');
+
   return {
-    id
-    amount: amount.toString(), // Ensure string forBigInt/Microstacks precision
+    id,
+    amount: amount.toString(), // Ensure string for BigInt/Microstacks precision
     merchantAddress,
     memo: memo || "",
     status: "pending",
@@ -27,14 +28,14 @@ export function createInvoice({ amount, merchantAddress, memo }) {
  * Triggers the Stacks wallet (Xverse/Leather) for an STX transfer.
  */
 export async function payWithSTX({ amount, recipient, memo, network = "mainnet" }) {
-  const stacksNework = network === "mainnet" ? new StacksMainnet() : new StacksTestnet(
+  const stacksNetwork = network === "mainnet" ? new StacksMainnet() : new StacksTestnet();
 
   return new Promise((resolve, reject) => {
     openSTXTransfer({
-      recipient
-      amount: amount.toString(),
-      memo: memo || "StacksPay Payment
-      network: stacksNetwork
+      recipient,
+      amount: amount.toString(), 
+      memo: memo || "StacksPay Payment",
+      network: stacksNetwork,
       onFinish: (data) => {
         // data.txId is the key for verifyPayment
         resolve(data);
