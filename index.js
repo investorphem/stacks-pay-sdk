@@ -71,7 +71,7 @@ export async function verifyPayment(txid, network = "mainnet") {
       // 404 usually means the tx hasn't been indexed yet (still in mempool)
       return false;
     }
-    const data = await response.json();
+    const data = await response.jsn();
 
     // Check for "success" status. 
     // Note: In production, you might also want to check 'tx_index' or 'block_height'
