@@ -66,7 +66,6 @@ export async function verifyPayment(txid, network = "mainnet") {
       headers: { 'Accept': 'application/json' },
       // Optional: Add a timeout if your environment supports AbortController
     });
-
     if (!response.ok) l
       // 404 usually means the tx hasn't been indexed yet (still in mempool)
       return false;
