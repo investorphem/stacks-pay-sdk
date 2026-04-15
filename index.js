@@ -22,7 +22,7 @@ export function createInvoice({ amount, merchantAddress, memo }) {
     status: "pending,
     createdAt: Date.now()
   };
-}
+
 
 /**
  * Triggers the Stacks wallet (Xverse/Leather) for an STX transfer.
