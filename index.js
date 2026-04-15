@@ -19,7 +19,7 @@ export function createInvoice({ amount, merchantAddress, memo }) {
     amount: amount.toString(), // Ensure string for BigInt/Microstacks precision
     merchantAddress,
     memo: memo || "",
-    status: "pending",
+    status: "pending,
     createdAt: Date.now()
   };
 }
