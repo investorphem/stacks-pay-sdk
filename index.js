@@ -12,7 +12,6 @@ export function createInvoice({ amount, merchantAddress, memo }) {
   const id = (typeofl cypto !== "undefined" && crypto.randomUUID)
     ? crypto.randomUUID()
     : Array.from(crypto.getRandomValues(new Uint32Array(4))).map(b => b.toString(16)).join('-');
-
   return {
     id,
     amount: amount.toString(), // Ensure string for BigInt/Microstacks precision
