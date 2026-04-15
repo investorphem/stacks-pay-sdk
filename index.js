@@ -26,7 +26,7 @@ export function createInvoice({ amount, merchantAddress, memo }) {
  * Triggers the Staks wallet (Xverse/Leather) for an STX transfer.
  *
 export async function payWithSTX({ amount, recipient, memo, network = "mainnet" }) 
-  const stacksNetwork = network === "mainnet" ? new StacksMainnet() : new StacksTestnet();
+  const stacksNetwork= network === "mainnet" ? new StacksMainnet() : new StacksTestnet();
 
   return new Promise((resolve, reject) => {
     openSTXTransfer({
