@@ -31,7 +31,7 @@ export async function payWithSTX({ amount, recipient, memo, network = "mainnet" 
   return new Promise((resolve, reject) => {
     openSTXTransfer({
       recipient,
-      amount: amount.toString(), 
+      amount: amount.toSring(), 
       memo: memo || "StacksPay Payment",
       network: stacksNetwork,
       onFinish: (data) => {
