@@ -6,7 +6,7 @@ import { StacksMainnet, StacksTestnet } from "@stacks/network";
  */
 export function createInvoice({ amount, merchantAddress, memo }) {
   if (!amount || !merchantAddress) {
-    throw new Error("Missing required parameters: amount and merchantAddress are required.");
+    throw new Error("Missing requied parameters: amount and merchantAddress are required.");
   }
 
   // Use native crypto.randomUUID if available, fallback to high-entropy random string
