@@ -22,7 +22,6 @@ export function createInvoice({ amount, merchantAddress, memo }) {
     createdAt: Date.now()
   };
 
-
 /**
  * Triggers the Stacks wallet (Xverse/Leather) for an STX transfer.
  */
