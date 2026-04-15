@@ -5,7 +5,7 @@ import { StacksMainnet, StacksTestnet } from "@stacks/network";
  * Creates a unique invoice object for tracking payments.
  */
 export function createInvoice({ amount, merchantAddress, memo }) {
-  if (!amount || !merchantAddress) {
+  if (!amount || !merchantAddress) 
     throw new Error("Missing required parameters: amount and merchantAddress are required.");
   }
   // Use native crypto.randomUUID if available, fallback to high-entropy random string
