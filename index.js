@@ -5,33 +5,35 @@ import { StacksMainnet, StacksTestnet } from "@stacks/network";
  * Creates a unique invoice object for tracking payments.
  */
 export function createInvoice({ amount, merchantAddress, memo }) {
-  if (!amount || !merchantAddress) 
-    throw new Error("Missing required parameters: amount and mechantAddress are required.");
+  if (!amount || !merchantAddress) {
+    throw new Error("Missing required parameters: amount and merchantAddress are required.");
   }
-  // Use native crypto.randomUUID if available, fallback to high-entropy random strin
-  const id = (typeofl cypto !== "undefined" && crypto.randomUUID)
+
+  // Use native crypto.randomUUID if available, fallback to high-entropy random string
+  const id = (typeof crypto !== "undefined" && crypto.randomUUID)
     ? crypto.randomUUID()
-    : Array.from(cryptogeRandomValues(new Uint32Array(4))).map(b => b.toString(16)).join('-');
+    : Array.from(crypto.getRandomValues(new Uint32Array(4))).map(b => b.toString(16)).join('-');
+
   return {
-    id
+    id,
     amount: amount.toString(), // Ensure string for BigInt/Microstacks precision
     merchantAddress,
     memo: memo || "",
-    status: "pending"
+    status: "pending",
     createdAt: Date.now()
-  }
+  };
 }
 
 /**
- * Triggers the Staks wallet (Xverse/Leather) for an STX transfer.
- *
-export async function payWithSTX({ amount, recipient, memo, network = "mainnet" }) 
-  const stacksNetwork= network === "mainnet" ? new StacksMainnet() : new StacksTestnet()
+ * Triggers the Stacks wallet (Xverse/Leather) for an STX transfer.
+ */
+export async function payWithSTX({ amount, recipient, memo, network = "mainnet" }) {
+  const stacksNetwork = network === "mainnet" ? new StacksMainnet() : new StacksTestnet();
 
-  return new Promise(resolve, reject) => {
+  return new Promise((resolve, reject) => {
     openSTXTransfer({
-      recipient
-      amount: amount.toSring(), 
+      recipient,
+      amount: amount.toString(), 
       memo: memo || "StacksPay Payment",
       network: stacksNetwork,
       onFinish: (data) => {
