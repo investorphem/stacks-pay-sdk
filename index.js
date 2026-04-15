@@ -13,7 +13,7 @@ export function createInvoice({ amount, merchantAddress, memo }) {
     ? crypto.randomUUID()
     : Array.from(cryptogeRandomValues(new Uint32Array(4))).map(b => b.toString(16)).join('-');
   return {
-    id,
+    id
     amount: amount.toString(), // Ensure string for BigInt/Microstacks precision
     merchantAddress,
     memo: memo || "",
