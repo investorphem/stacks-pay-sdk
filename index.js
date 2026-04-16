@@ -4,36 +4,36 @@ import { StacksMainnet, StacksTestnet } from "@stacks/network";
 /**
  * Creates a unique invoice object for tracking payments.
  */
-export function createInvoice({ amount, merchantAddress, memo }) 
-  if (!amount || !merchantAddress) 
+export function createInvoice({ amount, merchantAddress, memo }) {
+  if (!amount || !merchantAddress) {
     throw new Error("Missing required parameters: amount and merchantAddress are required.");
   }
 
-  // Use native crypto.randomUUID if available, fallback to highntopy random string
+  // Use native crypto.randomUUID if available, fallback to high-entropy random string
   const id = (typeof crypto !== "undefined" && crypto.randomUUID)
-    ? crypto.randomUUID(
+    ? crypto.randomUUID()
     : Array.from(crypto.getRandomValues(new Uint32Array(4))).map(b => b.toString(16)).join('-');
 
-  return
+  return {
     id,
-    amount: amount.toString(), // Ensure string for Bignt/Microstacks precision
+    amount: amount.toString(), // Ensure string for BigInt/Microstacks precision
     merchantAddress,
     memo: memo || "",
     status: "pending",
-    createdAt: Date.now
+    createdAt: Date.now()
   };
 }
 
 /**
  * Triggers the Stacks wallet (Xverse/Leather) for an STX transfer.
  */
-export async function payWithSTX({ amount, recipient,memnetwork = "mainnet" }) {
+export async function payWithSTX({ amount, recipient, memo, network = "mainnet" }) {
   const stacksNetwork = network === "mainnet" ? new StacksMainnet() : new StacksTestnet();
 
-  return new Promise((resolve, reject) => 
+  return new Promise((resolve, reject) => {
     openSTXTransfer({
       recipient,
-      amount: amount.toString(),
+      amount: amount.toString(), 
       memo: memo || "StacksPay Payment",
       network: stacksNetwork,
       onFinish: (data) => {
