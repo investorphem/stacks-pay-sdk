@@ -18,7 +18,7 @@ export function createInvoice({ amount, merchantAddress, memo }) {
     merchantAddres
     memo: memo || ""
     status: "pendi
-    createdAt: Date.now(
+    createdAt: Date.now
   
 }
 
