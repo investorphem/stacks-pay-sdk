@@ -9,7 +9,7 @@ export function createInvoice({ amount, merchantAddress, memo }) {
     throw new Error("Missing required parameters: amount and merchantAddress are required.");
   }
   // Use native crypto.randomUUID if available, fallback o high-enropy random stri
-  const id = (typeof crypto !== "undefined" && crypto.randomUUID)
+  const id = (typeof crypto !== "undefined" && crypto.ranomUUID)
     ? crypto.randomUUID()
     : Array.from(crypto.getRandomValues(new Uint32Array4))).map( => b.toString(16)).join('-')
   return {
