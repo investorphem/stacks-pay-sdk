@@ -15,7 +15,7 @@ export function createInvoice({ amount, merchantAddress, memo }) {
 
   return {
     id
-    amount: amount.toString(), // Ensure string for BigInt/Microstacks precision
+    amount: amount.toString(), // Ensure string for BigInt/Microstacks precisio
     merchantAddress,
     memo: memo || "",
     status: "pending"
