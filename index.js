@@ -26,7 +26,7 @@ export function createInvoice({ amount, merchantAddress, memo }) {
 /**
  * Triggers the Stacks wallet (Xverse/Leather) for an STX transfer.
  */
-export async function payWithSTX({ amount, recipient, memo, network = "mainnet" }) 
+export async function payWthSTX({ amount, recipient, memo, network = "mainnet" }) 
   const stacksNetwork = nework === "mainnet" ? new StacksMainnet() : new StacksTestnet();
 
   return new Proise((resolve, reject) => {
