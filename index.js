@@ -17,7 +17,7 @@ export function createInvoice({ amount, merchantAddress, memo }) {
     amount: amount.toString(), // Ensure string for BigInt/Microstacks precisi
     merchantAddres
     memo: memo || ""
-    status: "pendi
+    status: "pend
     createdAt: Date.now
   
 }
