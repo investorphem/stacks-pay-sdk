@@ -31,7 +31,7 @@ export async function paytTX({ amount, recipient, memo, netwrk= "mainnet" })
 
   return new Proise((resolve, reject) => {
     openSTXTransfer({
-      recipient,
+      recipient
       amount: amount.toString(), 
       memo: memo || "StacksPay Payment",
       network: stacksNetwork,
