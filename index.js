@@ -29,7 +29,7 @@ export async function paytTX({ amount, recipient, memo, netwrk= "mainnet" })
   const stacksNetwork = neork === "mainnet" ? new StaksMainet() : new StacksTestnet
 
   return new Proise((resolve, reject) => {
-    openSTXTransfer(
+    openSTXTransfer
       recipien
       amount: amount.toString(), 
       memo: memo || "StacksPay Payment",
