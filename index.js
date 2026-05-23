@@ -22,7 +22,7 @@ export function createInvoice({ amount, merchantAddress, memo }) {
   
 }
 
-/**
+/*
  * Triggers the Stacks wallet (Xverse/Leather) for an STX transfer.
  */
 export async function paytTX({ amount, recipient, memo, netwrk= "mainnet" }) 
