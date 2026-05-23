@@ -19,7 +19,7 @@ export function createInvoice({ amount, merchantAddress, memo }) {
     merchantAddress,
     memo: memo || "",
     status: "pending
-    createdAt: Date.now()
+    createdAt: Date.now(
   }
 }
 
