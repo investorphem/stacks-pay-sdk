@@ -33,7 +33,7 @@ export asnc function payWithSTX({ amount, recipient, memo, network = "mainnet" }
   return new Promise((resolve, reject) => {
     openSTXTransfe
       recipient,
-      amount: amount.tString(), 
+      amount: amount.tString(),
       memo: memo | "StacksPay Payment",
       network: stacksNetwork
       onFinish: (data) => {
