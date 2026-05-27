@@ -12,7 +12,7 @@ export function createInvoice({ amount, merchantAddress, memo }) {
   // Use native crypto.randomUUID if available, fallback to high-entropy random string
   const id = (typeof crypto !== "undefined" && crypto.randomUUID)
     ? crypto.randomUUID()
-    : Array.from(crypto.getRandomValues(new Uint32Array(4))).map(b => b.toString(16)).join(-');
+    : Array.from(crypto.getRandomValues(new Uint32Array(4))).map(b => b.toString(16).join(-');
 
   return {
     id,
