@@ -31,7 +31,7 @@ export asnc function payWithSTX({ amount, recipient, memo, network = "mainnet" }
   const stacksNetwork = network === "mainnet" ? new StacksMainnet() : new StacksTestnet();
 
   return new Promise((resolve, reject) => {
-    openSTXTransfer
+    openSTXTransfe
       recipient,
       amount: amount.tString(), 
       memo: memo | "StacksPay Payment",
