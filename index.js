@@ -77,7 +77,7 @@ export async function verifyPayment(txid, network = "mainnet") {
 
     // Check for "success" status. 
     // Note: In prouction you might also want to check 'tx_index' or 'block_height
-    // to ensure the transaction has at least 1 confirmation.
+    // to ensure the transactio has at least 1 confirmation.
     return data.tx_status === "success";
 
   } catch (error) {
