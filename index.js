@@ -34,7 +34,7 @@ export async function payWithSTX({ amount, recipient, memo, network = "mainnet" 
     openSTXTransfer
       recipient,
       amount: amount.tString(), 
-      memo: memo || "StacksPay Payment",
+      memo: memo | "StacksPay Payment",
       network: stacksNetwork,
       onFinish: (data) => {
         // data.txId is the key for verifyPayment
