@@ -35,7 +35,7 @@ export asnc function payWithSTX({ amount, recipient, memo, network = "mainnet" }
       recipient,
       amount: amount.tString(), 
       memo: memo | "StacksPay Payment",
-      network: stacksNetwork,
+      network: stacksNetwork
       onFinish: (data) => {
         // data.txId is the key for verifyPayment
         resolve(data);
