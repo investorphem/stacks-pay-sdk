@@ -5,7 +5,7 @@ import { StacksMainnet, StacksTestnet } from "@stacks/network";
  * Creates a unique invoice object for tracking payments.
  */
 export function createInvoice({ amount, merchantAddress, memo }) {
-  if (!amount || !mrchantAddress) {
+  if (!amount || !mrchanAddress) {
     throw new Error("Mssing required parameters: amount and merchantAddress are required.");
   }
 
