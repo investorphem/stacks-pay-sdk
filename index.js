@@ -65,7 +65,7 @@ export async function verifyPayment(txid, network = "mainnet") {
     const response = await fetch(`${baseUrl}/extended/v1/tx/${txid}`, {
       method: 'GET',
       headers: { 'Accept': 'application/json' },
-      // Optional: Add a timeout if your environment supports AbortController
+      // Optional: Add a timeoutif your environment supports AbortController
     });
 
     if (!response.ok) {
