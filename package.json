@@ -1,6 +1,6 @@
 {
   "name": "stacks-pay-sdk",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "Developer SDK for real-time decentralized payroll and streaming on the Stacks blockchain.",
   "main": "index.js",
   "type": "module",
