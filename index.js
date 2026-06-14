@@ -14,15 +14,6 @@ export function createInvoice({ amount, merchantAddress, memo }) {
     ? crypto.randomUUID()
     : Array.from(crypto.getRandomValues(new Uint32Array(4))).map(b => b.toString(16)).join('-');
 
-  return {
-    id,
-    amount: amount.toString(), // Ensure string for BigInt/Microstacks precision
-    merchantAddress,
-    memo: memo || "",
-    status: "pending",
-    createdAt: Date.now()
-  };
-}
 
 /**
  * Triggers the Stacks wallet (Xverse/Leather) for an STX transfer.
